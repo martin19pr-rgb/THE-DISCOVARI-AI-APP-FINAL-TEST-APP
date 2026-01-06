@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discovari AI – Fast, Trusted Home Repairs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-cosmic"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="Discovari AI logo" class="logo" />
+      <span class="brand-name">Discovari AI</span>
+    </div>
+    <nav class="steps">
+      <button data-goto="#landing">Landing</button>
+      <button data-goto="#auth">Signup</button>
+      <button data-goto="#report">Report</button>
+      <button data-goto="#diagnosis">Diagnosis</button>
+      <button data-goto="#insurance">Insurance</button>
+      <button data-goto="#matching">Match</button>
+      <button data-goto="#tracking">Track</button>
+      <button data-goto="#payment">Pay</button>
+      <button data-goto="#confirmation">Confirm</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Landing -->
+    <section id="landing" class="section active">
+      <div class="hero">
+        <h1 class="gradient-text">Reinvent Home Repairs with AI</h1>
+        <p class="muted">98% satisfaction • Vetted teams • Transparent pricing</p>
+        <div class="search-box">
+          <input id="issueText" type="text" placeholder="Describe your issue (e.g., roof leak above kitchen)" />
+          <label class="upload">
+            <input id="issueFile" type="file" accept="image/*,video/*" hidden />
+            <span>Upload photo/video</span>
+          </label>
+        </div>
+        <div class="cta-row">
+          <button class="btn btn-orange" data-goto="#report">Request Repair</button>
+          <button class="btn btn-cyan" data-goto="#auth" data-mode="contractor">Join as Contractor</button>
+        </div>
+        <div class="badges">
+          <span class="badge">98% Satisfaction</span>
+          <span class="badge">Vetted Teams</span>
+          <span class="badge">No insurance needed to start</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Auth -->
+    <section id="auth" class="section">
+      <div class="split">
+        <div class="card">
+          <h2>Client</h2>
+          <div class="form">
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <input type="text" placeholder="Address (Street, City)" />
+            <select>
+              <option>Property Type</option>
+              <option>House</option>
+              <option>Apartment</option>
+              <option>Townhouse</option>
+            </select>
+            <button class="btn btn-orange" data-goto="#report">Continue</button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Contractor</h2>
+          <div class="form">
+            <input type="email" placeholder="Business Email" />
+            <input type="password" placeholder="Password" />
+            <input type="text" placeholder="Company / Team Name" />
+            <label class="file-pill">
+              <input type="file" accept="image/*,.pdf" hidden />
+              <span>Upload credentials</span>
+            </label>
+            <button class="btn btn-cyan" data-goto="#matching">Go to Contractor Dashboard</button>
+          </div>
+        </div>
+      </div>
+      <div class="transition-line">Blueprinting your dashboard…</div>
+    </section>
+
+    <!-- Report -->
+    <section id="report" class="section">
+      <div class="stack">
+        <h2>New Repair Request</h2>
+        <button id="startProcessing" class="btn btn-orange wfit">Start AI Diagnosis</button>
+        <div class="uploader">
+          <label class="file-pill">
+            <input id="reportFile" type="file" accept="image/*,video/*" hidden />
+            <span>Attach photo/video</span>
+          </label>
+        </div>
+        <div id="spinner" class="spinner hidden">
+          <div class="orb"></div>
+          <p>Analyzing issue…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagnosis -->
+    <section id="diagnosis" class="section">
+      <div class="card big">
+        <h2>AI Diagnosis</h2>
+        <div class="diag-grid">
+          <div>
+            <div class="label">Category</div>
+            <div id="diagCategory" class="value">—</div>
+          </div>
+          <div>
+            <div class="label">Estimated Cost</div>
+            <div id="diagEstimate" class="value">—</div>
+          </div>
+          <div>
+            <div class="label">Time</div>
+            <div id="diagTime" class="value">—</div>
+          </div>
+          <div>
+            <div class="label">Confidence</div>
+            <div id="diagConfidence" class="value">—</div>
+          </div>
+        </div>
+        <p class="muted">~80% faster than traditional assessments</p>
+        <div class="cta-row">
+          <button class="btn btn-orange" data-goto="#insurance">Continue</button>
+          <button class="btn btn-ghost" data-goto="#matching">Skip Insurance</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insurance -->
+    <section id="insurance" class="section">
+      <h2>Insurance Coverage (Optional)</h2>
+      <p class="muted">Choose parts of your home to protect. Repairs proceed either way.</p>
+      <div class="periodic-grid">
+        <button class="cell" data-part="Roof" data-premium="149" data-benefits="Instant claims; 20% renovation discount; 30-day guarantee">Ro<br/><span>Roof</span></button>
+        <button class="cell" data-part="Ceiling" data-premium="99" data-benefits="Fast claims; Mold coverage; 30-day guarantee">Ce<br/><span>Ceiling</span></button>
+        <button class="cell" data-part="Bathroom" data-premium="129" data-benefits="Leak protection; Tile damage; 30-day guarantee">Ba<br/><span>Bathroom</span></button>
+        <button class="cell" data-part="Kitchen" data-premium="139" data-benefits="Appliance damage; Leak; 30-day guarantee">Ki<br/><span>Kitchen</span></button>
+        <button class="cell" data-part="Garage" data-premium="79" data-benefits="Door & motor; Water ingress; 30-day guarantee">Ga<br/><span>Garage</span></button>
+        <button class="cell" data-part="Paint" data-premium="59" data-benefits="Peel & crack; Touch-up; 30-day guarantee">Pa<br/><span>Paint</span></button>
+      </div>
+      <div id="coverageModal" class="modal hidden">
+        <div class="modal-card">
+          <h3 id="modalTitle">—</h3>
+          <p class="price">R<span id="modalPremium">—</span>/month</p>
+          <ul id="modalBenefits" class="bullets"></ul>
+          <div class="cta-row">
+            <button id="btnAddCoverage" class="btn btn-orange">Add Coverage</button>
+            <button class="btn btn-ghost" data-goto="#matching">Continue Without</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Matching -->
+    <section id="matching" class="section">
+      <h2>Matching You with Vetted Teams</h2>
+      <div id="matchList" class="match-list"></div>
+      <p class="muted">Average match time <strong><2 min</strong></p>
+    </section>
+
+    <!-- Tracking -->
+    <section id="tracking" class="section">
+      <h2>Live Job Tracking</h2>
+      <div class="map"></div>
+      <div class="chat">
+        <div id="chatFeed" class="feed"></div>
+        <div class="composer">
+          <input id="chatInput" type="text" placeholder="Send an update…" />
+          <button id="chatSend" class="btn btn-cyan">Send</button>
+        </div>
+      </div>
+      <div class="cta-row">
+        <button class="btn btn-orange" data-goto="#payment">Mark Complete → Pay</button>
+      </div>
+    </section>
+
+    <!-- Payment -->
+    <section id="payment" class="section">
+      <div class="card big">
+        <h2>Payment</h2>
+        <div class="summary">
+          <div><span>Service</span><strong id="svc">Roof Leak Repair</strong></div>
+          <div><span>Amount</span><strong id="amt">R10,200</strong></div>
+          <div><span>Platform Fee</span><strong>12%</strong></div>
+          <div><span>Insurance</span><strong id="ins">Not applied</strong></div>
+        </div>
+        <div class="form grid2">
+          <input type="text" placeholder="Cardholder Name" />
+          <input type="text" placeholder="Card Number" />
+          <input type="text" placeholder="MM/YY" />
+          <input type="text" placeholder="CVC" />
+        </div>
+        <button id="payBtn" class="btn btn-orange">Pay Securely</button>
+      </div>
+    </section>
+
+    <!-- Confirmation -->
+    <section id="confirmation" class="section">
+      <div class="card big center">
+        <h2>Job Complete – Thank You!</h2>
+        <p id="confirmSummary">Your payment was successful.</p>
+        <div id="discountBlock" class="hidden">
+          <p>Coverage active – here’s your 20% renovation discount code:</p>
+          <div class="code" id="discCode">—</div>
+        </div>
+        <div class="rating">
+          <span>Rate your experience</span>
+          <div class="stars" id="stars">★★★★★</div>
+        </div>
+        <a class="btn btn-cyan" href="pdf.html" target="_blank">Open PDF Guide</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div>Fast. Trusted. Insured (or not – your choice).</div>
+    <div>Start your first repair today at <strong>discovari.ai</strong></div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

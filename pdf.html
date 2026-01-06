@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discovari AI – User Workflow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0e14; --line:#1b2330; --orange:#ff7a1a; --cyan:#2bd4ff; --muted:#a8b0bd; --white:#e9eef5}
+    *{box-sizing:border-box}
+    html,body{margin:0; font-family:Inter, Arial, sans-serif; color:var(--white); background:var(--bg)}
+    .page{height:100vh; padding:48px; display:grid; align-content:start; gap:14px; background:
+      radial-gradient(1400px 600px at 0% -10%, rgba(43,212,255,.08), transparent 60%),
+      radial-gradient(1000px 500px at 110% 0%, rgba(255,122,26,.08), transparent 60%),
+      repeating-linear-gradient(0deg, transparent 0 39px, var(--line) 40px),
+      repeating-linear-gradient(90deg, transparent 0 39px, var(--line) 40px);
+    }
+    h1,h2{margin:0}
+    h1{font-size:42px; background:linear-gradient(90deg, var(--orange), var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    h2{font-size:22px; color:#e9eef5}
+    p,li{color:var(--muted)}
+    .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+    .card{border:1px solid var(--line); border-radius:16px; padding:18px; background:rgba(255,255,255,.02)}
+    .badge{display:inline-block; border:1px solid var(--line); color:#9ddff0; padding:4px 8px; border-radius:999px; margin-right:6px}
+    .cta .btn{display:inline-block; padding:10px 14px; border-radius:12px; color:white; text-decoration:none; margin-right:8px}
+    .btn.orange{background:linear-gradient(180deg,#ff7a1a,#c95500)}
+    .btn.blue{background:linear-gradient(180deg,#2bd4ff,#099ac1); color:#04161e}
+
+    /* print */
+    @media print{
+      .page{height:auto; min-height:100vh; page-break-after:always}
+    }
+  </style>
+</head>
+<body>
+  <!-- Page 1 – Cover -->
+  <section class="page">
+    <img src="assets/logo.svg" alt="logo" style="height:52px"/>
+    <h1>Discovari AI – Your Journey to Fast, Trusted Home Repairs</h1>
+    <h2>From First Visit to Insurance Coverage</h2>
+    <p>Date: January 2026</p>
+    <p style="opacity:.7">Background: Subtle cosmic blueprint overlay (dark navy with faint sketches).</p>
+  </section>
+
+  <!-- Page 2 – Landing Page -->
+  <section class="page">
+    <h2>Landing Page</h2>
+    <div class="card">
+      <h1 style="font-size:32px">Reinvent Home Repairs with AI</h1>
+      <div style="margin:10px 0">
+        <span class="badge">AI Search: Describe your issue or upload photo</span>
+        <span class="badge">CTA: Request Repair (orange)</span>
+        <span class="badge">CTA: Join as Contractor (blue)</span>
+        <span class="badge">Trust: 98% Satisfaction • Vetted Teams</span>
+      </div>
+      <p class="cta"><a class="btn orange">Request Repair</a><a class="btn blue">Join as Contractor</a></p>
+      <p>No insurance needed to start – optional coverage available.</p>
+    </div>
+  </section>
+
+  <!-- Page 3 – Signup / Login -->
+  <section class="page">
+    <h2>Signup / Login</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Client Onboarding</h3>
+        <ul>
+          <li>Google/Email login</li>
+          <li>Add address and property type</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Contractor Onboarding</h3>
+        <ul>
+          <li>Google/Email login</li>
+          <li>Upload credentials, add team members</li>
+        </ul>
+      </div>
+    </div>
+    <p>Visual: Blueprint line animation transitioning to dashboard.</p>
+  </section>
+
+  <!-- Page 4 – Issue Reporting & AI Diagnosis -->
+  <section class="page">
+    <h2>Issue Reporting & AI Diagnosis</h2>
+    <ol>
+      <li>New Repair Request button</li>
+      <li>Camera/upload interface (photo/video)</li>
+      <li>AI processing spinner (cosmic particles)</li>
+      <li>Diagnosis result: Category, Estimate, Time, Confidence + suggestions</li>
+    </ol>
+    <p>Callout: 80% faster than traditional assessments</p>
+  </section>
+
+  <!-- Page 5 – Insurance Coverage Option -->
+  <section class="page">
+    <h2>Insurance Coverage Option</h2>
+    <p>Periodic table-style grid: Roof, Ceiling, Bathroom, Kitchen, Garage, Paint.</p>
+    <div class="card">
+      <h3>Interactive example: Roof</h3>
+      <ul>
+        <li>Monthly premium: R149</li>
+        <li>Benefits: Instant claims, 20% renovation discount, 30-day guarantee</li>
+        <li>Toggle: Add Coverage or Continue Without Insurance</li>
+      </ul>
+      <p>Insurance is always optional – repairs proceed either way.</p>
+    </div>
+  </section>
+
+  <!-- Page 6 – Contractor Matching -->
+  <section class="page">
+    <h2>Contractor Matching</h2>
+    <ul>
+      <li>List of vetted teams with rating, ETA (maps), team size</li>
+      <li>“Available Now” badge</li>
+      <li>Selection → Book Now (with/without insurance applied)</li>
+    </ul>
+  </section>
+
+  <!-- Page 7 – Job Tracking & Completion -->
+  <section class="page">
+    <h2>Job Tracking & Completion</h2>
+    <ul>
+      <li>Live tracking map with blueprint overlay</li>
+      <li>Chat updates</li>
+      <li>Completion: After photos → AI verification → Client approval → Payment release (10–15% platform fee)</li>
+    </ul>
+  </section>
+
+  <!-- Page 8 – Confirmation & Benefits -->
+  <section class="page">
+    <h2>Confirmation & Benefits</h2>
+    <ul>
+      <li>“Job Complete – Thank You!”</li>
+      <li>Summary: Cost, time saved, rating prompt</li>
+      <li>If insured: coverage active + 20% renovation discount code</li>
+      <li>Cosmic celebration animation</li>
+    </ul>
+  </section>
+
+  <!-- Page 9 – Summary Flow Chart -->
+  <section class="page">
+    <h2>Summary Flow Chart</h2>
+    <p>Landing → Signup → Report Issue → AI Diagnosis → Insurance Option → Match → Track → Complete → Benefits</p>
+    <p>Arrows with time estimates (e.g., < 2 min to match)</p>
+  </section>
+
+  <!-- Page 10 – Closing -->
+  <section class="page">
+    <h2>Closing</h2>
+    <p><strong>Tagline:</strong> Fast. Trusted. Insured (or not – your choice).</p>
+    <p><strong>Call to action:</strong> Start your first repair today at discovari.ai</p>
+    <p>Footer: Contact / Socials / Built for the future of home care</p>
+  </section>
+</body>
+</html>
